@@ -129,8 +129,8 @@ class JWTTest extends TestCase
     protected function helper()
     {
         return new JWT(
-            file_get_contents(__DIR__ . '/../../private_key.pem'),
-            file_get_contents(__DIR__ . '/../../public_key.pem')
+            file_get_contents(__DIR__ . '/../private_key.pem'),
+            file_get_contents(__DIR__ . '/../public_key.pem')
         );
     }
 }

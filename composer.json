@@ -1,6 +1,6 @@
 {
-  "name": "controlabs/php-jwt-helper",
-  "description": "Helper to work with FirebaseJWT",
+  "name": "controlabs/jwt-helper",
+  "description": "Helper to generate jwt using firebase/php-jwt in a simplified way",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -18,7 +18,7 @@
   },
   "autoload": {
     "psr-4": {
-      "": "src"
+      "Controlabs\\": "src"
     }
   },
   "config": {
