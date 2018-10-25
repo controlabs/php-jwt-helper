@@ -1,0 +1,27 @@
+{
+  "name": "controlabs/php-jwt-helper",
+  "description": "Helper to work with FirebaseJWT",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Carlos Rodrigues",
+      "email": "carlosrodriguesf96@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "firebase/php-jwt": "^5.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src"
+    }
+  },
+  "config": {
+    "bin-dir": "cli"
+  }
+}
