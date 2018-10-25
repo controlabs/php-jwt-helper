@@ -60,7 +60,9 @@ class JWT implements JWTInterface
 
             return json_decode(json_encode($payload), true);
         } catch (Exception $exception) {
-            return $this->exceptionHandler($exception, $ignoreExceptions);
+            $this->exceptionHandler($exception, $ignoreExceptions);
+
+            return null;
         }
     }
 
@@ -103,10 +105,10 @@ class JWT implements JWTInterface
      * If null will return null too and token will never expire
      *
      * @param DateTimeImmutable $now
-     * @param null $expires
+     * @param string|null $expires
      * @return int|null
      */
-    protected function expires(DateTimeImmutable $now, $expires = null)
+    protected function expires(DateTimeImmutable $now, string $expires = null)
     {
         return !$expires ? null : $now->modify($expires)->getTimestamp();
     }
@@ -116,7 +118,6 @@ class JWT implements JWTInterface
      *
      * @param Exception $exception
      * @param bool $ignoreException
-     * @return null
      * @throws Exception
      */
     protected function exceptionHandler(Exception $exception, $ignoreException = false)
@@ -124,6 +125,5 @@ class JWT implements JWTInterface
         if (!$ignoreException) {
             throw $exception;
         }
-        return null;
     }
 }
