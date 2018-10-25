@@ -7,12 +7,11 @@
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/controlabs/php-jwt-helper/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
 
-[![License](https://poser.pugx.org/controlabs/php-jwt-helper/license)](https://packagist.org/packages/controlabs/php-jwt-helper)
-[![Latest Stable Version](https://poser.pugx.org/controlabs/php-jwt-helper/v/stable)](https://packagist.org/packages/controlabs/php-jwt-helper)
-[![Latest Unstable Version](https://poser.pugx.org/controlabs/php-jwt-helper/v/unstable)](https://packagist.org/packages/controlabs/php-jwt-helper)
-[![composer.lock](https://poser.pugx.org/controlabs/php-jwt-helper/composerlock)](https://packagist.org/packages/controlabs/php-jwt-helper)
-[![Total Downloads](https://poser.pugx.org/controlabs/php-jwt-helper/downloads)](https://packagist.org/packages/controlabs/php-jwt-helper)
-
+[![License](https://poser.pugx.org/controlabs/jwt-helper/license)](https://packagist.org/packages/controlabs/jwt-helper)
+[![Latest Stable Version](https://poser.pugx.org/controlabs/jwt-helper/v/stable)](https://packagist.org/packages/controlabs/jwt-helper)
+[![Latest Unstable Version](https://poser.pugx.org/controlabs/jwt-helper/v/unstable)](https://packagist.org/packages/controlabs/jwt-helper)
+[![composer.lock](https://poser.pugx.org/controlabs/jwt-helper/composerlock)](https://packagist.org/packages/controlabs/jwt-helper)
+[![Total Downloads](https://poser.pugx.org/controlabs/jwt-helper/downloads)](https://packagist.org/packages/controlabs/jwt-helper)
 
 Helper to generate JWT using firebase/php-jwt in a simplified way.
 
