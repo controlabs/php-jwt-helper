@@ -1,4 +1,7 @@
 .idea
 /vendor/
-coverage-report.xml
 cli/
+data
+composer.phar
+coverage-report.*
+phpunit.xml
