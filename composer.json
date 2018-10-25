@@ -3,12 +3,6 @@
   "description": "Helper to generate JWT using firebase/php-jwt in a simplified way",
   "type": "library",
   "license": "MIT",
-  "authors": [
-    {
-      "name": "Carlos Rodrigues",
-      "email": "carlosrodriguesf96@gmail.com"
-    }
-  ],
   "minimum-stability": "stable",
   "require": {
     "firebase/php-jwt": "^5.0"
