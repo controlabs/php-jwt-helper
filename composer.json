@@ -1,6 +1,6 @@
 {
   "name": "controlabs/jwt-helper",
-  "description": "Helper to generate jwt using firebase/php-jwt in a simplified way",
+  "description": "Helper to generate JWT using firebase/php-jwt in a simplified way",
   "type": "library",
   "license": "MIT",
   "authors": [
