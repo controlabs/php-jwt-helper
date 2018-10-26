@@ -21,10 +21,6 @@ Helper to generate JWT using firebase/php-jwt in a simplified way.
 composer require controlabs/jwt-helper
 ```
 
-## License
-
-This software is open source, licensed under the The MIT License (MIT). See [LICENSE](https://github.com/controlabs/php-jwt-helper/blob/master/LICENSE) for details.
-
 ## Usage
 
 ##### Load private and public keys
@@ -97,3 +93,7 @@ echo json_encode([
     'group_id' => $payload['group_id']
 ]);
 ```
+
+## License
+
+This software is open source, licensed under the The MIT License (MIT). See [LICENSE](https://github.com/controlabs/php-jwt-helper/blob/master/LICENSE) for details.
