@@ -60,7 +60,7 @@ echo json_encode([
 
 ##### Decoding JWT string
 ```php
-use Controlabs\Http\Exception\Unauthorized; // composer require controlabs/php-http-exceptions (optional)
+use Controlabs\Http\Exception\Unauthorized; // composer require controlabs/http-exceptions (optional)
 use Controlabs\Helper\JWT as JWTHelper;
 
 $helper = new JWTHelper(PRIVATE_KEY, PUBLIC_KEY);
