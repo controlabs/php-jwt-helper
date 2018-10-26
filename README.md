@@ -24,3 +24,76 @@ composer require controlabs/jwt-helper
 ## License
 
 This software is open source, licensed under the The MIT License (MIT). See [LICENSE](https://github.com/controlabs/php-jwt-helper/blob/master/LICENSE) for details.
+
+## Usage
+
+##### Load private and public keys
+```php
+define('PRIVATE_KEY', file_get_contents('path-to-private-key.pem'));
+define('PUBLIC_KEY', file_get_contents('path-to-public-key.pem'));
+```
+
+##### Generating JWT string
+```php
+use Controlabs\Helper\JWT as JWTHelper;
+
+$iss = 'https://controlabs.github.io'; // issuer
+$aud = 'https://controlabs.github.io'; // audition string
+$sub = 'controlabs'; // subject
+$exp = '+ 10 days'; // 'expiration constraint'
+
+$claims = [ //public claims
+    'user_id' => '7b1ded55-67bb-4c42-971d-814e15ba8c05',
+    'group_id' => '2065b625-3f0e-4dda-98ed-5d48956f5ee6',
+    'user_agent' => $_SERVER['HTTP_USER_AGENT'],
+    'remote_addr' => $_SERVER['REMOTE_ADDR']
+];
+
+$helper = new JWTHelper(PRIVATE_KEY, PUBLIC_KEY);
+
+$token = $helper->encode($iss, $aud, $sub, $exp, $claims);
+
+echo json_encode([
+    'token' => $token
+]);
+```
+
+##### Decoding JWT string
+```php
+use Controlabs\Http\Exception\Unauthorized; // composer require controlabs/php-http-exceptions (optional)
+use Controlabs\Helper\JWT as JWTHelper;
+
+$helper = new JWTHelper(PRIVATE_KEY, PUBLIC_KEY);
+
+try {
+    $payload = $helper->decode($_POST['token']);
+} catch(ExpiredToken $exception) {
+    throw new Unauthorized('Inalid token');
+}
+
+// or use $helper->decode($_POST['token'], true) to supress errors
+
+if($payload['user_agent'] !== $_SERVER['HTTP_USER_AGENT']) {
+    throw new Unauthorized('User agent is invalid.');
+}
+
+echo json_encode([
+    'user_id' => $payload['user_id'],
+    'group_id' => $payload['group_id']
+]);
+```
+
+##### Extracting payload without decode validations
+```php
+use Controlabs\Helper\JWT as JWTHelper;
+
+$helper = new JWTHelper(PRIVATE_KEY, PUBLIC_KEY);
+
+// Use only for logs or specific purposes because it extracts content without validating the token.
+$payload = $helper->payload($_POST['token']);
+
+echo json_encode([
+    'user_id' => $payload['user_id'],
+    'group_id' => $payload['group_id']
+]);
+```
